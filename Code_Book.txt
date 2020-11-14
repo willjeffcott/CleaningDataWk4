@@ -1,0 +1,60 @@
+Feature Selection 
+=================
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 'Time' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (TimeBodyAcc-XYZ and TimeGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (TimeBodyAccJerk-XYZ and TimeBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (TimeBodyAccMag, TimeGravityAccMag, TimeBodyAccJerkMag, TimeBodyGyroMag, TimeBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing FourierBodyAcc-XYZ, FourierBodyAccJerk-XYZ, FourierBodyGyro-XYZ, FourierBodyAccJerkMag, FourierBodyGyroMag, FourierBodyGyroJerkMag. 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+
+######## We keep the following variables in the dataset 'mean_std' ###### 
+
+"Subject" - This is the subject who undertook the activity for the measurements
+"ActivityLabel" - This is the activity type that the subject was carrying out. It can be one of {WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING}                 
+
+"TimeBodyAccMeanX/Y/Z" - Time domain signal, Body Signal from Accelerometer, Mean in the X/Y/Z direction
+"TimeBodyAccMagMean" - Time domain signal, Body Signal from Accelerometer, Mean Magnitude
++ Fast Fourier Transform analogues for X/Y/Z and Magnitude with 'Time' replaced by 'Fourier'
+      
+"TimeBodyAccStDevX/Y/Z" - Time domain signal, Body Signal from Accelerometer, Standard Deviation in the X/Y/Z direction          
+"TimeBodyAccMagStDev" - Time domain signal, Body Signal from Accelerometer, Standard Deviation Magnitude
++ Fast Fourier Transform analogues for X/Y/Z and Magnitude with 'Time' replaced by 'Fourier'
+
+"TimeGravityAccMeanX/Y/Z - Time domain signal, Gravity Signal from Accelerometer, Mean in the X/Y/Z direction 
+"TimeGravityAccMagMean" - Time domain signal, Gravity Signal from Accelerometer, Mean Magnitude 
+             
+"TimeGravityAccStDevX/Y/Z - Time domain signal, Gravity Signal from Accelerometer, Standard Deviation in the X/Y/Z direction
+"TimeGravityAccMagStDev" - Time domain signal, Gravity Signal from Accelerometer, Standard Deviation Magnitude
+   
+"TimeBodyAccJerkMeanX/Y/Z - Time domain signal, Jerk Signal derived from Body Signal from Accelerometer, Mean in the X/Y/Z direction
+"TimeBodyAccJerkMagMean" - Time domain signal, Jerk Signal derived from Body Signal from Accelerometer, Mean Magnitude
++ Fast Fourier Transform analogues for X/Y/Z and Magnitude with 'Time' replaced by 'Fourier'
+              
+"TimeBodyAccJerkStDevX/Y/Z - Time domain signal, Jerk Signal derived from Body Signal from Accelerometer, Standard Deviation in the X/Y/Z direction
+"TimeBodyAccJerkMagStDev" - Time domain signal, Jerk Signal derived from Body Signal from Accelerometer, Standard Deviation Magnitude
++ Fast Fourier Transform analogues for X/Y/Z and Magnitude with 'Time' replaced by 'Fourier'
+          
+"TimeBodyGyroMeanX/Y/Z" - Time domain signal, Body Signal from Gyroscope, Mean in the X/Y/Z direction      
+"TimeBodyGyroMagMean" - Time domain signal, Body Signal from Gyroscope, Mean Magnitude
++ Fast Fourier Transform analogues for X/Y/Z and Magnitude with 'Time' replaced by 'Fourier'
+
+"TimeBodyGyroStDevX/Y/Z" - Time domain signal, Body Signal from Gyroscope, Standard Deviation in the X/Y/Z direction    
+"TimeBodyGyroMagStDev" - Time domain signal, Body Signal from Gyroscope, Standard Deviation Magnitude
++ Fast Fourier Transform analogues for X/Y/Z and Magnitude with 'Time' replaced by 'Fourier'
+
+"TimeBodyGyroJerkMeanX/Y/Z - Time domain signal, Jerk Signal derived from Body Signal from Gyroscope, Mean in the X/Y/Z direction              
+"TimeBodyGyroJerkMagMean" - Time domain signal, Jerk Signal derived from Body Signal from Gyroscope, Mean Magnitude
++ Fast Fourier Transform analogue for Magnitude with 'Time' replaced by 'Fourier'
+
+"TimeBodyGyroJerkStDevX/Y/Z - Time domain signal, Jerk Signal derived from Body Signal from Gyroscope, Standard Deviation in the X/Y/Z direction
+"TimeBodyGyroJerkMagStDev" - Time domain signal, Jerk Signal derived from Body Signal from Gyroscope, Standard Deviation Magnitude
++ Fast Fourier Transform analogue for Magnitude with 'Time' replaced by 'Fourier'
+   
+
+############## We then create the tidy dataset 'mean_std_tidy' #############################
+
+The mean of each of the above variables is calculated for each Activity AND each subject. The resulting tidy dataset is called mean_std_tidy
